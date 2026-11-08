@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   ZITTARA HOME DECOR — SISTEMA DE DISEÑO ARQUITECTÓNICO EDITORIAL
+   Tipografía: Cinzel (Display) + Manrope (Sans) + JetBrains Mono (Technical)
+   Paleta: Caliza Travertino (#F7F5F0, #EAE4DC), Carbón Basáltico (#191816), Oro Cepillado (#C59B63)
+   ========================================================================== */
+
+:root {
+  --bg-primary: #F7F5F0;
+  --bg-secondary: #EAE4DC;
+  --bg-dark: #191816;
+  --bg-dark-card: #22201D;
+  --bg-card-light: #FFFFFF;
+
+  --text-primary: #1C1A17;
+  --text-muted: #6B665E;
+  --text-light: #F4F0EA;
+  --text-light-muted: #A39E96;
+
+  --accent-gold: #C59B63;
+  --accent-gold-hover: #B0864F;
+  --accent-gold-dark: #9E743A;
+  --accent-gold-subtle: rgba(197, 155, 99, 0.12);
+
+  --border-hairline: rgba(28, 26, 23, 0.10);
+  --border-hairline-dark: rgba(244, 240, 234, 0.12);
+  --border-hairline-gold: rgba(197, 155, 99, 0.28);
+
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+
+  --container-max: 1480px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+::selection {
+  background-color: var(--accent-gold);
+  color: #191816;
+}
+
+/* Tipografía de Alto Nivel */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.12;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+/* Enlaces y botones */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contenedor Editorial */
+.container-editorial {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3.5rem);
+  padding-right: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+/* Líneas de precisión arquitectónica */
+.hairline-b {
+  border-bottom: 1px solid var(--border-hairline);
+}
+.hairline-t {
+  border-top: 1px solid var(--border-hairline);
+}
+.hairline-r {
+  border-right: 1px solid var(--border-hairline);
+}
+.hairline-l {
+  border-left: 1px solid var(--border-hairline);
+}
+
+.hairline-dark-b {
+  border-bottom: 1px solid var(--border-hairline-dark);
+}
+.hairline-dark-t {
+  border-top: 1px solid var(--border-hairline-dark);
+}
+
+/* Botones Editoriales Zittara */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.9rem;
+  background-color: var(--accent-gold);
+  color: #191816;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.btn-gold:hover {
+  background-color: var(--accent-gold-hover);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.9rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-dark);
+  background-color: var(--accent-gold-subtle);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.9rem;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--border-hairline-dark);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background-color: rgba(197, 155, 99, 0.1);
+}
+
+/* Efecto de Zoom Suave para Imágenes de Arquitectura */
+.image-reveal-wrapper {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-secondary);
+}
+
+.image-reveal-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-reveal-wrapper:hover img {
+  transform: scale(1.035);
+}
+
+/* Animaciones sutiles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #C59B63;
+}
+
+/* Media Queries para Responsividad Editorial */
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  .mobile-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+  .hero-col-main {
+    grid-column: span 12 !important;
+  }
+  .hero-col-sub1 {
+    grid-column: span 6 !important;
+  }
+  .hero-col-sub2 {
+    grid-column: span 6 !important;
+  }
+}
+
